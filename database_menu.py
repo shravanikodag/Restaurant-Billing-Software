@@ -14,30 +14,52 @@ cursor.execute('''
 CREATE TABLE IF NOT EXISTS menu(
 id INTEGER PRIMARY KEY,
 item_name TEXT NOT NULL,
-category TEXT,
-price REAL NOT NULL,
-gst REAL)''')
+price INTEGER NOT NULL,
+gst INTEGER NOT NULL,
+category TEXT)''')
+
 
 #3.sample menu
 menu_items=[
-     ('Panner-tikka','Starter',150,5),
-     ('Veg Manchurian','Starter',150,6),
-     ('Veg Soup','Starter',150,2),
-     ('Panner Butter Masala ','Main Course',150,6),
-     ('Dal Tadka','Main Course',100,5),
-     ('Veg Biryani','Main Course',350,6),
-     ('Butter Roti','Bread',20,5),
-     ('Paratha','Bread',45,6),
-     ('Butter Naan','Bread',30,4),
-     ('Jeera Rice','Rice',120,5),
-     ('Steam Rice','Rice',100,4),
-     ('Gulab Jamun','Desert',50,3),
-     ('Ice Cream','Desert',100,5),
-     ('Rasgulla','Desert',120,5)   
+    #Starters
+    ('Veg Momos',129,5,'Starter'),
+    ("Tomato Soup",99,5,"Starter"),
+    ("Greek Salad",139,5,"Starter"),
+    ("Garlic Bread",129,5,"Starter"),
+    ("Panner Chiili Dry",199,5,"Starter"),
+    ("Crispy Corn",99,5,"Starter"),
+    ("Veg Manchurian",199,5,"Starter"),
+
+    #Main Course
+    ("Veg Kolhapuri",199,5,"Main Course"),
+    ("Malai Kofta",244,5,"Main Course"),
+    ("Palak Panner",299,5,"Main Course"),
+    ("Dal Tadka",129,5,"Main Course"),
+    ("Mix Veg",139,5,"Main Course"),
+    ("Veg Hakka Noodles",179,5,"Main Course"),
+    #Roti
+    ("Naan",10,2,"Roti"),
+    ("Butter Roti",15,3,"Roti"),
+    ("Cheese Roti",12,2,"Roti"),
+    #Rice
+    ("Jeera Rice",149,5,"Rice"),
+    ("Steam Rice",99,5,"Rice"),
+    ("Veg Biryani",299,5,"Rice"),
+    #Beavrage
+    ("Cold Coffee",40,5,"Beavrage"),
+    ("Fresh Lime Soda",49,5,"Beavrage"),
+    ("Mango Lassi",69,5,"Beavrage"),
+    ("Masala Chai",15,5,"Beavrage"),
+    #Dessert
+    ("Gulabjamun(2pcs)",99,5,"Dessert"),
+    ("RassMalai(2pcs)",149,5,"Dessert"),
+    ("Caramel Custard",99,5,"Dessert"),
+    ("Ice Cream Scoop",79,5,"Dessert"),
+    ("Chocolate Brownie",129,5,"Dessert")
 ]
 
 #4.insert sample menu into  table
-cursor.executemany('''INSERT INTO MENU (item_name,category,price,gst)
+cursor.executemany('''INSERT INTO MENU (item_name,price,gst,category)
 VALUES(?,?,?,?)''',menu_items)
 
 #5.save change
