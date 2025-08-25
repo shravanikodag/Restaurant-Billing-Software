@@ -1,4 +1,4 @@
-Python 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)] on win32
+inPython 3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license()" for more information.
 
 = RESTART: C:\Users\\Desktop\RestaurantBilling\Bill_generator.py
@@ -76,6 +76,7 @@ Enter Item id to order starts from 1:0
 Enter Customer Name: Priya Rane
 Enter contact number:9154632487
 Order Type (Dine-in/Takeway):Dine in
+payment Mode:UPI
 Enter discount amonut (if any,else 0):30
 
 Generating your bill...
