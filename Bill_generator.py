@@ -70,7 +70,9 @@ def create_pdf(bill_items,total,customer_info):
     pdf.set_font("Times","",12)
     pdf.cell(0,10,f"Customer Name:{customer_info['name']}",ln=True,align="L")
     pdf.cell(0,10,f"Customer Contact:{customer_info['contact']}",ln=True,align="L")
-    pdf.cell(0,10,f"Order Type:{customer_info['order_type']}",ln=True,align="L")
+    pdf.cell(0,10,f"Order Type:{customer_info['order_type']}",ln=True,align="L") 
+pdf.cell(0,10,f"Payment type:
+{customer_info['paymemt_opt']}",pn=True,align="L")
     pdf.ln()
     
     #Table headers
@@ -148,6 +150,7 @@ if __name__=="__main__":
             customer_info['name']=input("Enter Customer Name: ").strip()
             customer_info['contact']=input("Enter contact number:").strip()
             customer_info['order_type']=input("Order Type (Dine-in/Takeway):").strip()
+cunstomer_info['payment_opt']=input("Payment Mode:").strip()
             try:
                 discount=float(input("Enter discount amonut (if any,else 0):").strip())
             except:
